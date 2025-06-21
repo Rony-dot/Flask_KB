@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Jinja</title>
+</head>
+<body>
+    <h2>Some basic jinja things</h2>
+    <h3>hi, {{ name }}</h3>
+    <h3>your email is: {{ email }}</h3>
+
+    <h2>A list of numbers are below</h2>
+    {% for item in numbers %}
+        {% if item==4 %}
+            <h3 style="color:red">{{ item }}</h3>
+        {% else %}
+            <h3>{{ item }}</h3>
+        {% endif %}
+    {% endfor %}
+
+    <h2>A list of numbers are below</h2>
+    {% for item in numbers %}
+        <h3 {% if item==4 %} style="color:red"{% endif %}>{{ item }}</h3>
+    {% endfor %}
+
+</body>
+</html>
