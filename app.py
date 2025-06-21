@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, make_response
 
 app = Flask(__name__)
 
@@ -52,6 +52,14 @@ def handle_url_params():
     name = request.args.get('name')
     return f"<h1>{greeting}, {name}</h1>"
 
+
+@app.route("/custom_response")
+def custom_response():
+    response = make_response("hello custom response")
+    response.status = 201
+    response.content_type = 'application/json' # either this
+    response.headers['content-type'] = 'text/plain' # or this
+    return response
 
 
 
