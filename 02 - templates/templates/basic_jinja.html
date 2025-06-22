@@ -5,23 +5,32 @@
     <title>Basic Jinja</title>
 </head>
 <body>
-    <h2>Some basic jinja things</h2>
-    <h3>hi, {{ name }}</h3>
-    <h3>your email is: {{ email }}</h3>
+    <p>Some basic jinja things</p>
+    <p>hi, {{ name }}, and your email is: {{ email }}</p>
 
-    <h2>A list of numbers are below</h2>
+     <p>A list of numbers are below</p>
     {% for item in numbers %}
         {% if item==4 %}
-            <h3 style="color:red">{{ item }}</h3>
+            <p style="color:red">{{ item }}</p>
         {% else %}
-            <h3>{{ item }}</h3>
+            <p>{{ item }}</p>
         {% endif %}
     {% endfor %}
 
-    <h2>A list of numbers are below</h2>
+    <p>A list of numbers are below (inline if else)</p>
     {% for item in numbers %}
-        <h3 {% if item==4 %} style="color:red"{% endif %}>{{ item }}</h3>
+        <p {% if item==4 %} style="color:red"{% endif %}>{{ item }}</p>
     {% endfor %}
 
+    <p>Using filters</p>
+    <ul>
+        <li> actual value: {{ name }} </li>
+        <li> upper: {{ name | upper }} </li>
+        <li> lower: {{ name | lower }} </li>
+        <li> title: {{ name | title }} </li>
+        <li> actual value: {{ name | replace('h','H') }} </li>
+        <li> actual value: {{ name | repeat }} </li>
+        <li> actual value: {{ name | repeat(5) }} </li>
+    </ul>
 </body>
 </html>

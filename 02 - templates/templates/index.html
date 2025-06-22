@@ -6,5 +6,8 @@
 </head>
 <body>
     <h1>Hello world from Flask template</h1>
+    <p>redirect to another page</p>
+    <p>click below > goes to "redirect" url > ends up on "jinja" page</p>
+    <a href="{{ url_for('redirect_page') }}">redirect to another page</a>
 </body>
 </html>
