@@ -1,0 +1,15 @@
+{%  extends "base.html" %}
+
+
+{% block content %}
+<form method="POST" action="{{ url_for("form_page_content") }}">
+    <input type="text" name="username" placeholder="USERNAME"><br>
+    <input type="password" name="password" placeholder="PASSWORD"><br>
+    <input type="submit" value="login">
+</form>
+    <h2>File handle example</h2>
+    <form method="POST" action="{{ url_for("handle_file") }}" enctype="multipart/form-data">
+        <input type="file" name="file" accept="text/plain, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+        <input type="submit" value="upload file">
+    </form>
+{% endblock %}
